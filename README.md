@@ -99,7 +99,7 @@ python-dotenv (Environment variables)
 
 Git/GitHub (Version control)
 # 👨‍💻 Autor
-Yeferson Esmid Heredia Perdomo
+Yeferson Esmid Heredia Perdomo  
 Nicolas Obregon Rojas
 # 🤝 Contribuciones
 Si deseas mejorar este proyecto:
