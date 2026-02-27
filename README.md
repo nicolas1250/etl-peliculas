@@ -24,7 +24,7 @@ Aprender las 4 fases de un proceso ETL profesional:
 # Clonar repositorio
 git clone https://github.com/tu_usuario/etl-omdb.git
 cd etl-omdb
-
+```
 # Crear entorno virtual
 python3 -m venv venv
 source venv/bin/activate  # En Windows: .\venv\Scripts\Activate.ps1
@@ -47,6 +47,7 @@ data/peliculas_analysis.png - Gráficas de análisis
 
 logs/etl.log - Registro de ejecución
 #  Estructura del Proyecto
+```
 etl-peliculas/
 ├── scripts/
 │   ├── extractor_peliculas.py  # Extrae datos de la API OMDb
@@ -57,6 +58,7 @@ etl-peliculas/
 ├── .env                        # Variables de entorno (no commitear)
 ├── requirements.txt            # Dependencias Python
 └── README.md                   # Este archivo
+```
 #  Obtener API Key
 Ve a OMDb API
 
