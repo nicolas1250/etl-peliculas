@@ -17,15 +17,7 @@ st.set_page_config(
     page_icon="🎬",
     layout="wide"
 )
-st.sidebar.markdown("## ⚙️ ETL")
 
-if st.sidebar.button("🔄 Ejecutar Extracción"):
-    with st.spinner("Extrayendo datos desde la API..."):
-        extractor = MovieExtractor()
-        datos = extractor.ejecutar_extraccion()
-        extractor.guardar_en_bd(datos)
-    st.success("✅ Datos actualizados correctamente")
-    st.rerun()
 # CSS personalizado
 st.markdown("""
     <style>
