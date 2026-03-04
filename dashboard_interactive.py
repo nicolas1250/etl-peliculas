@@ -3,15 +3,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from datetime import datetime, timedelta
-from sqlalchemy import func, and_
+from sqlalchemy import and_
 import sys
 sys.path.insert(0, '.')
 
 from scripts.database import SessionLocal
 from scripts.models import Pelicula, RegistroPeliculas
-from scripts.extractor import MovieExtractor
 
-
+# Configuración de la página
 st.set_page_config(
     page_title="Dashboard Películas",
     page_icon="🎬",
@@ -41,7 +40,7 @@ peliculas_disponibles = [p.titulo for p in db.query(Pelicula).all()]
 peliculas_seleccionadas = st.sidebar.multiselect(
     "🎬 Películas a Mostrar",
     options=peliculas_disponibles,
-    default=peliculas_disponibles[:5]
+    default=peliculas_disponibles[:10]
 )
 
 # Rango de fechas de extracción
@@ -64,7 +63,7 @@ with col1:
 with col2:
     rating_max = st.sidebar.slider("⭐ Calificación Max:", 0.0, 10.0, 10.0, 0.1)
 
-# Obtén datos filtrados
+# Consulta datos filtrados
 registros_filtrados = db.query(
     RegistroPeliculas,
     Pelicula.titulo
@@ -95,11 +94,17 @@ for registro, titulo in registros_filtrados:
 df = pd.DataFrame(data) if data else pd.DataFrame()
 
 if not df.empty:
+    # Convertir fecha a solo día para eliminar duplicados por día
+    df['Fecha Día'] = pd.to_datetime(df['Fecha Extracción']).dt.date
+
+    # Eliminar duplicados por título y día
+    df = df.drop_duplicates(subset=['Título', 'Fecha Día'])
+
+    
     # KPIs
     st.markdown("### 📊 Indicadores Clave")
     
     col1, col2, col3, col4, col5 = st.columns(5)
-    
     with col1:
         st.metric("⭐ Rating Max", f"{df['IMDB Rating'].max():.1f}")
     with col2:
@@ -115,7 +120,6 @@ if not df.empty:
     
     # Gráficas interactivas
     col1, col2 = st.columns(2)
-    
     with col1:
         st.markdown("#### Comparativa de Ratings")
         fig = px.box(
@@ -161,10 +165,8 @@ if not df.empty:
     # Tabla interactiva
     st.markdown("#### 📋 Datos Detallados")
     col1, col2 = st.columns(2)
-    
     with col1:
         mostrar_todos = st.checkbox("Mostrar todos los registros", value=False)
-    
     with col2:
         columnas_mostrar = st.multiselect(
             "Columnas a mostrar:",
