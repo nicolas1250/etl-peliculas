@@ -99,6 +99,8 @@ if not df.empty:
 
     # Eliminar duplicados por título y día
     df = df.drop_duplicates(subset=['Título', 'Fecha Día'])
+    # Reiniciar el índice para que sea consecutivo
+    df.reset_index(drop=True, inplace=True)
 
     
     # KPIs
