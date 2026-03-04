@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import os
 import requests
 import json
@@ -6,7 +7,8 @@ import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
 import logging
-
+from scripts.database import SessionLocal
+from scripts.models import Pelicula, RegistroPeliculas
 # Cargar variables de entorno
 load_dotenv()
 
@@ -54,25 +56,33 @@ class MovieExtractor:
             logger.error(f"❌ Error extrayendo datos para {pelicula}: {str(e)}")
             return None
 
-    def procesar_respuesta(self, response_data):
-        """Procesa la respuesta JSON a formato estructurado"""
+    def procesar_respuesta(self, data):
         try:
+            duracion = data.get("Runtime")
+            duracion = int(duracion.replace(" min", "")) if duracion and "min" in duracion else 0
+
+            rating = data.get("imdbRating")
+            rating = float(rating) if rating and rating != "N/A" else 0.0
+
+            box = data.get("BoxOffice")
+            if box and box != "N/A":
+                box = float(box.replace("$", "").replace(",", ""))
+            else:
+                box = 0.0
+
             return {
-                'titulo': response_data.get('Title'),
-                'anio': response_data.get('Year'),
-                'genero': response_data.get('Genre'),
-                'director': response_data.get('Director'),
-                'actores': response_data.get('Actors'),
-                'duracion': response_data.get('Runtime'),
-                'calificacion_imdb': response_data.get('imdbRating'),
-                'votos_imdb': response_data.get('imdbVotes'),
-                'idioma': response_data.get('Language'),
-                'pais': response_data.get('Country'),
+                "titulo": data.get("Title"),
+                "anio": data.get("Year"),
+                "genero": data.get("Genre"),
+                "director": data.get("Director"),
+                "duracion": duracion,
+                "rating": rating,
+                "recaudacion": box,
                 'fecha_extraccion': datetime.now().isoformat()
             }
 
         except Exception as e:
-            logger.error(f"Error procesando respuesta: {str(e)}")
+            logger.error(f"Error procesando datos: {e}")
             return None
 
     def ejecutar_extraccion(self):
@@ -89,6 +99,50 @@ class MovieExtractor:
                     datos_extraidos.append(datos_procesados)
 
         return datos_extraidos
+        
+    def guardar_en_bd(self, datos):
+        """Guarda los datos procesados en la base de datos"""
+        db = SessionLocal()
+
+        try:
+            for pelicula_data in datos:
+
+                # Buscar si la película ya existe
+                pelicula = db.query(Pelicula).filter_by(
+                    titulo=pelicula_data['titulo']
+                ).first()
+
+                # Si no existe, crearla
+                if not pelicula:
+                    pelicula = Pelicula(
+                        titulo=pelicula_data['titulo']
+                    )
+                    db.add(pelicula)
+                    db.commit()
+                    db.refresh(pelicula)
+
+                # Crear registro histórico
+                registro = RegistroPeliculas(
+                    pelicula_id=pelicula.id,
+                    anio=pelicula_data['anio'],
+                    genero=pelicula_data['genero'],
+                    director=pelicula_data['director'],
+                    duracion=pelicula_data['duracion'],
+                    imdb_rating=pelicula_data['rating'],
+                    fecha_extraccion=datetime.now()
+                )
+
+                db.add(registro)
+
+            db.commit()
+            print("✅ Datos guardados en la base de datos")
+
+        except Exception as e:
+            db.rollback()
+            print("❌ Error guardando en BD:", e)
+
+        finally:
+            db.close()
 
 
 if __name__ == "__main__":

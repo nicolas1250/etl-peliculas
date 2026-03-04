@@ -2,123 +2,181 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from datetime import datetime, timedelta
-from sqlalchemy import func
+from datetime import datetime
 import sys
-
 sys.path.insert(0, '.')
 
 from scripts.database import SessionLocal
 from scripts.models import Pelicula, RegistroPeliculas
+from scripts.extractor import MovieExtractor
 
+# ===================== CONFIGURACIÓN =====================
 st.set_page_config(
-    page_title="Dashboard Películas",
+    page_title="Dashboard de Películas ETL",
     page_icon="🎬",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-st.title("🎥 Dashboard ETL - Películas")
+st.title("🎥 Dashboard de Películas - ETL IMDB")
 st.markdown("---")
 
 db = SessionLocal()
 
-tab1, tab2 = st.tabs(["📊 Vista General", "📈 Histórico"])
+try:
+    registros = db.query(RegistroPeliculas, Pelicula.titulo).join(
+        Pelicula
+    ).order_by(RegistroPeliculas.fecha_extraccion.desc()).all()
 
-# ---------- TAB 1: Vista General ----------
-with tab1:
-    st.subheader("Datos Actuales")
-    
-    col1, col2, col3 = st.columns(3)
-    
+    data = []
+    for registro, titulo in registros:
+        data.append({
+            'Película': titulo,
+            'Género': registro.genero,
+            'Año': registro.anio,
+            'Duración': registro.duracion,
+            'IMDB Rating': registro.imdb_rating,
+            'Recaudación': registro.recaudacion,
+            'Director': registro.director,
+            'Fecha': registro.fecha_extraccion
+        })
+
+    df = pd.DataFrame(data)
+
+    # 🔥 PROTECCIÓN SI NO HAY DATOS
+    if df.empty:
+        st.warning("⚠️ No hay datos en la base de datos. Ejecuta el ETL primero.")
+        st.stop()
+
+    # ===================== LIMPIEZA NUMÉRICA (FIX ERROR SCATTER) =====================
+
+    numeric_cols = ['Duración', 'IMDB Rating', 'Recaudación']
+
+    for col in numeric_cols:
+        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+
+    # Normalizar recaudación para tamaño del scatter (evita burbujas gigantes)
+    df['Recaudación_norm'] = df['Recaudación'] / 1_000_000
+
+    # Convertir fecha correctamente
+    df['Fecha'] = pd.to_datetime(df['Fecha'], errors='coerce')
+
+    # ===================== SIDEBAR =====================
+    st.sidebar.title("🔧 Filtros")
+
+    peliculas_filtro = st.sidebar.multiselect(
+        "Selecciona Películas:",
+        options=df['Película'].unique(),
+        default=df['Película'].unique()
+    )
+
+    genero_filtro = st.sidebar.multiselect(
+        "Selecciona Géneros:",
+        options=df['Género'].unique(),
+        default=df['Género'].unique()
+    )
+
+    df_filtrado = df[
+        (df['Película'].isin(peliculas_filtro)) &
+        (df['Género'].isin(genero_filtro))
+    ]
+
+    # ===================== MÉTRICAS =====================
+    st.subheader("📈 Métricas Principales")
+    col1, col2, col3, col4 = st.columns(4)
+
     with col1:
-        total_peliculas = db.query(func.count(Pelicula.id)).scalar()
-        st.metric("🎬 Total de Películas", total_peliculas)
-    
+        st.metric(
+            "⭐ Rating Promedio",
+            f"{df_filtrado['IMDB Rating'].mean():.2f}"
+        )
+
     with col2:
-        total_registros = db.query(func.count(RegistroPeliculas.id)).scalar()
-        st.metric("📊 Registros ETL", total_registros)
-    
+        st.metric(
+            "⏱️ Duración Promedio",
+            f"{df_filtrado['Duración'].mean():.1f} min"
+        )
+
     with col3:
-        ultima_fecha = db.query(func.max(RegistroPeliculas.fecha_extraccion)).scalar()
-        if ultima_fecha:
-            st.metric("⏰ Última Actualización", ultima_fecha.strftime("%Y-%m-%d %H:%M"))
-        else:
-            st.metric("⏰ Última Actualización", "No hay registros")
-    
+        st.metric(
+            "💰 Recaudación Total",
+            f"${df_filtrado['Recaudación'].sum():,.0f}"
+        )
+
+    with col4:
+        st.metric(
+            "📊 Total Registros",
+            len(df_filtrado)
+        )
+
     st.markdown("---")
-    
-    # Últimas películas
-    peliculas_actuales = db.query(
-        Pelicula.titulo,
-        RegistroPeliculas.genero,
-        RegistroPeliculas.anio,
-        RegistroPeliculas.duracion,
-        RegistroPeliculas.imdb_rating
-    ).join(RegistroPeliculas).order_by(RegistroPeliculas.fecha_extraccion.desc()).limit(20).all()
-    
-    df_actual = pd.DataFrame(peliculas_actuales, columns=[
-        'Título', 'Género', 'Año', 'Duración', 'Calificación'
-    ])
-    
-    if not df_actual.empty:
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            fig = px.bar(df_actual, x='Título', y='Calificación',
-                         title='Calificación de Últimas Películas',
-                         color='Calificación', color_continuous_scale='Viridis')
-            st.plotly_chart(fig, use_container_width=True)
-        
-        with col2:
-            fig = px.pie(df_actual, values='Duración', names='Título',
-                         title='Distribución de Duración')
-            st.plotly_chart(fig, use_container_width=True)
-        
-        st.markdown("---")
-        st.dataframe(df_actual, use_container_width=True)
-    else:
-        st.info("No hay películas registradas aún")
 
-# ---------- TAB 2: Histórico ----------
-with tab2:
-    st.subheader("Análisis Histórico")
-    
+    # ===================== VISUALIZACIONES =====================
+    st.subheader("📉 Visualizaciones")
+
     col1, col2 = st.columns(2)
-    with col1:
-        fecha_inicio = st.date_input("Desde:", value=datetime.now() - timedelta(days=30))
-    with col2:
-        fecha_fin = st.date_input("Hasta:", value=datetime.now())
-    
-    registros_historicos = db.query(
-        RegistroPeliculas,
-        Pelicula.titulo
-    ).join(Pelicula).filter(
-        RegistroPeliculas.fecha_extraccion >= fecha_inicio,
-        RegistroPeliculas.fecha_extraccion <= fecha_fin
-    ).all()
-    
-    if registros_historicos:
-        data = []
-        for registro, titulo in registros_historicos:
-            data.append({
-                'Fecha': registro.fecha_extraccion,
-                'Película': titulo,
-                'Año': registro.anio,
-                'Género': registro.genero,
-                'Director': registro.director,
-                'Duración': registro.duracion,
-                'IMDB Rating': registro.imdb_rating,
-                'Recaudación': registro.recaudacion
-            })
-        
-        df_historico = pd.DataFrame(data)
-        st.dataframe(df_historico, use_container_width=True)
-        
-        fig = px.line(df_historico, x='Fecha', y='IMDB Rating',
-                      color='Película', title='Calificación en el Tiempo',
-                      markers=True)
-        st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.warning("No hay registros en ese rango de fechas")
 
-db.close()
+    # Rating por Película
+    with col1:
+        fig_rating = px.bar(
+            df_filtrado.sort_values('IMDB Rating', ascending=False),
+            x='Película',
+            y='IMDB Rating',
+            title="Calificación IMDB por Película",
+            color='IMDB Rating',
+            color_continuous_scale='Viridis'
+        )
+        st.plotly_chart(fig_rating, use_container_width=True)
+
+    # Recaudación por Película
+    with col2:
+        fig_recaudacion = px.bar(
+            df_filtrado.sort_values('Recaudación', ascending=False),
+            x='Película',
+            y='Recaudación',
+            title="Recaudación por Película",
+            color='Recaudación',
+            color_continuous_scale='Blues'
+        )
+        st.plotly_chart(fig_recaudacion, use_container_width=True)
+
+    # ===================== SCATTER FIXED =====================
+    col1, col2 = st.columns(2)
+
+    with col1:
+        fig_scatter = px.scatter(
+            df_filtrado,
+            x='Duración',
+            y='IMDB Rating',
+            size='Recaudación_norm',  # 🔥 ya no falla
+            color='Género',
+            title="Duración vs Rating (Tamaño = Recaudación)",
+            hover_data=['Película', 'Director']
+        )
+        st.plotly_chart(fig_scatter, use_container_width=True)
+
+    # Evolución temporal
+    with col2:
+        fig_line = px.line(
+            df_filtrado.sort_values('Fecha'),
+            x='Fecha',
+            y='IMDB Rating',
+            color='Película',
+            title="Evolución del Rating en el Tiempo",
+            markers=True
+        )
+        st.plotly_chart(fig_line, use_container_width=True)
+
+    st.markdown("---")
+
+    # ===================== TABLA =====================
+    st.subheader("📋 Datos Detallados")
+
+    st.dataframe(
+        df_filtrado.sort_values('Fecha', ascending=False),
+        use_container_width=True,
+        height=400
+    )
+
+finally:
+    db.close()
