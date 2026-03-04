@@ -16,7 +16,7 @@ Thumbs.db
 
 # Datos locales
 data/
-logs/
+
 
 # IDE
 .vscode/

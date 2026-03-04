@@ -1,0 +1,188 @@
+2026-02-27 11:49:52,192 - INFO - Iniciando extracción para 5 películas...
+2026-02-27 11:49:52,195 - ERROR - ❌ Error extrayendo datos para Inception: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2026-02-27 11:49:52,196 - ERROR - ❌ Error extrayendo datos para Interstellar: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2026-02-27 11:49:52,196 - ERROR - ❌ Error extrayendo datos para The Matrix: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2026-02-27 11:49:52,196 - ERROR - ❌ Error extrayendo datos para Gladiator: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2026-02-27 11:49:52,197 - ERROR - ❌ Error extrayendo datos para Titanic: Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+2026-02-27 11:49:52,197 - INFO - 📁 Datos guardados en data/peliculas_raw.json
+2026-02-27 11:49:52,203 - INFO - 📁 Datos guardados en data/peliculas.csv
+2026-02-27 11:52:20,624 - INFO - Iniciando extracción para 5 películas...
+2026-02-27 11:52:21,139 - INFO - ✅ Datos extraídos para Inception
+2026-02-27 11:52:21,436 - INFO - ✅ Datos extraídos para Interstellar
+2026-02-27 11:52:21,767 - INFO - ✅ Datos extraídos para The Matrix
+2026-02-27 11:52:22,053 - INFO - ✅ Datos extraídos para Gladiator
+2026-02-27 11:52:22,424 - INFO - ✅ Datos extraídos para Titanic
+2026-02-27 11:52:22,426 - INFO - 📁 Datos guardados en data/peliculas_raw.json
+2026-02-27 11:52:22,430 - INFO - 📁 Datos guardados en data/peliculas.csv
+2026-02-27 13:04:18,358 - INFO - Iniciando extracción para 5 películas...
+2026-02-27 13:04:18,899 - INFO - ✅ Datos extraídos para Inception
+2026-02-27 13:04:19,237 - INFO - ✅ Datos extraídos para Interstellar
+2026-02-27 13:04:19,576 - INFO - ✅ Datos extraídos para The Matrix
+2026-02-27 13:04:19,885 - INFO - ✅ Datos extraídos para Gladiator
+2026-02-27 13:04:20,197 - INFO - ✅ Datos extraídos para Titanic
+2026-02-27 13:04:20,199 - INFO - 📁 Datos guardados en data/peliculas_raw.json
+2026-02-27 13:04:20,208 - INFO - 📁 Datos guardados en data/peliculas.csv
+2026-02-27 14:19:23,427 - INFO - Iniciando extracción para 5 películas...
+2026-02-27 14:19:23,958 - INFO - ✅ Datos extraídos para Inception
+2026-02-27 14:19:24,342 - INFO - ✅ Datos extraídos para Interstellar
+2026-02-27 14:19:24,620 - INFO - ✅ Datos extraídos para The Matrix
+2026-02-27 14:19:24,911 - INFO - ✅ Datos extraídos para Gladiator
+2026-02-27 14:19:25,189 - INFO - ✅ Datos extraídos para Titanic
+2026-02-27 14:19:25,193 - INFO - 📁 Datos guardados en data/peliculas_raw.json
+2026-02-27 14:19:25,202 - INFO - 📁 Datos guardados en data/peliculas.csv
+2026-02-27 16:30:36,311 - INFO - Iniciando extracción para 5 películas...
+2026-02-27 16:30:36,857 - INFO - ✅ Datos extraídos para Inception
+2026-02-27 16:30:37,190 - INFO - ✅ Datos extraídos para Interstellar
+2026-02-27 16:30:37,505 - INFO - ✅ Datos extraídos para The Matrix
+2026-02-27 16:30:37,812 - INFO - ✅ Datos extraídos para Gladiator
+2026-02-27 16:30:38,120 - INFO - ✅ Datos extraídos para Titanic
+2026-02-27 16:30:38,123 - INFO - 📁 Datos guardados en data/peliculas_raw.json
+2026-02-27 16:30:38,131 - INFO - 📁 Datos guardados en data/peliculas.csv
+2026-03-04 10:22:59,983 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:23:00,739 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:23:01,085 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:23:01,465 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:23:01,824 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:23:02,186 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:24:09,808 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:24:10,164 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:24:10,535 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:24:10,922 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:24:11,301 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:24:11,692 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:26:18,393 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:26:18,931 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:26:19,311 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:26:19,825 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:26:20,160 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:26:20,455 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:19,078 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:19,462 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:19,837 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:20,230 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:20,607 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:20,986 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:20,998 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:21,470 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:21,844 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:22,249 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:22,588 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:22,912 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:23,040 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:23,402 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:23,749 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:24,138 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:24,463 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:24,762 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:31,085 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:31,450 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:31,816 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:32,157 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:32,547 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:32,950 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:33,128 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:33,504 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:33,875 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:34,231 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:34,622 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:35,021 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:54,726 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:55,125 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:55,542 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:55,927 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:56,310 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:56,627 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:56,940 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:57,293 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:57,597 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:57,911 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:27:58,296 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:27:58,649 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:27:58,759 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:27:59,150 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:27:59,541 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:27:59,902 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:28:00,271 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:28:00,633 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:31:30,062 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:31:30,602 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:31:31,007 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:31:31,359 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:31:29,229 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:31:29,550 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:36:22,516 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:36:23,051 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:36:23,456 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:36:23,806 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:36:24,158 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:36:24,666 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:36:38,871 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:36:39,251 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:36:39,651 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:36:40,004 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:36:40,382 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:36:40,712 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:40:09,138 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:40:09,706 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:40:10,365 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:40:10,744 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:40:11,096 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:40:11,466 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:44:25,140 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:44:25,731 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:44:26,224 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:44:26,590 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:44:26,895 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:44:27,222 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:44:27,226 - ERROR - Error en extracción: Object of type datetime is not JSON serializable
+2026-03-04 10:46:12,747 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:46:13,313 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:46:13,709 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:46:14,081 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:46:14,474 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:46:14,859 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:46:14,862 - INFO - 📁 Datos guardados en data/peliculas_raw.json
+2026-03-04 10:46:14,874 - INFO - 📁 Datos guardados en data/peliculas.csv
+2026-03-04 10:46:38,194 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:46:36,122 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:46:36,497 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:46:36,825 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:46:37,153 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:46:37,520 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 10:47:39,601 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:49:15,301 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:51:15,951 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:51:43,299 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:53:52,116 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:54:23,295 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:55:58,922 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:59:56,027 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 10:59:56,615 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 10:59:56,968 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 10:59:57,396 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 10:59:57,809 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 10:59:58,169 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 11:02:44,452 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 11:02:45,209 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 11:02:45,601 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 11:02:45,947 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 11:02:46,315 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 11:02:46,717 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 11:02:56,269 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 11:02:56,632 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 11:02:56,997 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 11:02:57,386 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 11:02:57,711 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 11:02:58,023 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 11:19:29,000 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 11:19:29,530 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 11:19:29,859 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 11:19:30,222 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 11:19:30,666 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 11:19:30,975 - INFO - ✅ Datos extraídos para Titanic
+2026-03-04 11:19:44,959 - INFO - Iniciando extracción para 5 películas...
+2026-03-04 11:19:45,304 - INFO - ✅ Datos extraídos para Inception
+2026-03-04 11:19:45,607 - INFO - ✅ Datos extraídos para Interstellar
+2026-03-04 11:19:45,944 - INFO - ✅ Datos extraídos para The Matrix
+2026-03-04 11:19:46,289 - INFO - ✅ Datos extraídos para Gladiator
+2026-03-04 11:19:46,599 - INFO - ✅ Datos extraídos para Titanic
