@@ -10,6 +10,9 @@ __pycache__/
 .env
 .env.local
 
+# Credenciales de Streamlit — NUNCA commitear
+.streamlit/secrets.toml
+
 # Archivos del sistema
 .DS_Store
 Thumbs.db

@@ -8,7 +8,7 @@ import sys
 
 sys.path.insert(0, '.')
 
-from scripts.database import SessionLocal
+from scripts.datab import SessionLocal
 from scripts.models import Pelicula, RegistroPeliculas
 from scripts.extractor import MovieExtractor
 

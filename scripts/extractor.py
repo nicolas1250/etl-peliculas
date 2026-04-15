@@ -7,7 +7,7 @@ import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
 import logging
-from scripts.database import SessionLocal
+from scripts.datab import SessionLocal
 from scripts.models import Pelicula, RegistroPeliculas
 # Cargar variables de entorno
 load_dotenv()

@@ -7,7 +7,7 @@ from sqlalchemy import and_
 import sys
 sys.path.insert(0, '.')
 
-from scripts.database import SessionLocal
+from scripts.datab import SessionLocal
 from scripts.models import Pelicula, RegistroPeliculas
 
 # Configuración de la página

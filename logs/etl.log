@@ -208,3 +208,204 @@
 2026-03-04 12:51:31,028 - INFO - ✅ Datos extraídos para Pulp Fiction
 2026-03-04 12:51:31,344 - INFO - ✅ Datos extraídos para Forrest Gump
 2026-03-04 12:51:31,723 - INFO - ✅ Datos extraídos para The Shawshank Redemption
+2026-04-14 19:11:20,622 - INFO - Iniciando ETL para 10 películas...
+2026-04-14 19:11:21,117 - INFO - ✅ Datos extraídos para Inception
+2026-04-14 19:11:21,167 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (1, Inception, null, null, null, null, null, null, t, 2026-04-15 00:11:21.163423).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Inception', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 21, 163423)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:21,709 - INFO - ✅ Datos extraídos para Interstellar
+2026-04-14 19:11:21,714 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (2, Interstellar, null, null, null, null, null, null, t, 2026-04-15 00:11:21.713219).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Interstellar', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 21, 713219)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:22,030 - INFO - ✅ Datos extraídos para The Matrix
+2026-04-14 19:11:22,037 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (3, The Matrix, null, null, null, null, null, null, t, 2026-04-15 00:11:22.035184).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Matrix', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 22, 35184)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:22,401 - INFO - ✅ Datos extraídos para Gladiator
+2026-04-14 19:11:22,408 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (4, Gladiator, null, null, null, null, null, null, t, 2026-04-15 00:11:22.406539).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Gladiator', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 22, 406539)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:22,773 - INFO - ✅ Datos extraídos para Titanic
+2026-04-14 19:11:22,780 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (5, Titanic, null, null, null, null, null, null, t, 2026-04-15 00:11:22.778725).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Titanic', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 22, 778725)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:23,137 - INFO - ✅ Datos extraídos para The Godfather
+2026-04-14 19:11:23,141 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (6, The Godfather, null, null, null, null, null, null, t, 2026-04-15 00:11:23.140325).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Godfather', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 23, 140325)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:23,522 - INFO - ✅ Datos extraídos para The Dark Knight
+2026-04-14 19:11:23,529 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (7, The Dark Knight, null, null, null, null, null, null, t, 2026-04-15 00:11:23.527538).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Dark Knight', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 23, 527538)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:23,887 - INFO - ✅ Datos extraídos para Pulp Fiction
+2026-04-14 19:11:23,902 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (8, Pulp Fiction, null, null, null, null, null, null, t, 2026-04-15 00:11:23.892579).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Pulp Fiction', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 23, 892579)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:24,237 - INFO - ✅ Datos extraídos para Forrest Gump
+2026-04-14 19:11:24,244 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (9, Forrest Gump, null, null, null, null, null, null, t, 2026-04-15 00:11:24.242534).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Forrest Gump', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 24, 242534)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:24,658 - INFO - ✅ Datos extraídos para The Shawshank Redemption
+2026-04-14 19:11:24,666 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (10, The Shawshank Redemption, null, null, null, null, null, null, t, 2026-04-15 00:11:24.664581).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Shawshank Redemption', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 0, 11, 24, 664581)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-14 19:11:24,695 - INFO - 📈 Métricas guardadas correctamente
+2026-04-15 02:41:19,006 - INFO - Iniciando ETL para 10 películas...
+2026-04-15 02:41:19,443 - INFO - ✅ Datos extraídos para Inception
+2026-04-15 02:41:19,482 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (11, Inception, null, null, null, null, null, null, t, 2026-04-15 07:41:19.471471).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Inception', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 19, 471471)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:20,228 - INFO - ✅ Datos extraídos para Interstellar
+2026-04-15 02:41:20,234 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (12, Interstellar, null, null, null, null, null, null, t, 2026-04-15 07:41:20.233459).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Interstellar', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 20, 233459)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:21,928 - INFO - ✅ Datos extraídos para The Matrix
+2026-04-15 02:41:21,935 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (13, The Matrix, null, null, null, null, null, null, t, 2026-04-15 07:41:21.934184).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Matrix', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 21, 934184)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:22,789 - INFO - ✅ Datos extraídos para Gladiator
+2026-04-15 02:41:22,796 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (14, Gladiator, null, null, null, null, null, null, t, 2026-04-15 07:41:22.794615).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Gladiator', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 22, 794615)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:23,267 - INFO - ✅ Datos extraídos para Titanic
+2026-04-15 02:41:23,274 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (15, Titanic, null, null, null, null, null, null, t, 2026-04-15 07:41:23.273105).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Titanic', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 23, 273105)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:24,072 - INFO - ✅ Datos extraídos para The Godfather
+2026-04-15 02:41:24,078 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (16, The Godfather, null, null, null, null, null, null, t, 2026-04-15 07:41:24.077365).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Godfather', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 24, 77365)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:24,594 - INFO - ✅ Datos extraídos para The Dark Knight
+2026-04-15 02:41:24,600 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (17, The Dark Knight, null, null, null, null, null, null, t, 2026-04-15 07:41:24.598774).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Dark Knight', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 24, 598774)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:26,258 - INFO - ✅ Datos extraídos para Pulp Fiction
+2026-04-15 02:41:26,264 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (18, Pulp Fiction, null, null, null, null, null, null, t, 2026-04-15 07:41:26.263395).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Pulp Fiction', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 26, 263395)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:28,059 - INFO - ✅ Datos extraídos para Forrest Gump
+2026-04-15 02:41:28,068 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (19, Forrest Gump, null, null, null, null, null, null, t, 2026-04-15 07:41:28.065986).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'Forrest Gump', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 28, 65986)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:28,769 - INFO - ✅ Datos extraídos para The Shawshank Redemption
+2026-04-15 02:41:28,776 - ERROR - ❌ Error de integridad: (psycopg2.errors.NotNullViolation) null value in column "anio" of relation "peliculas" violates not-null constraint
+DETAIL:  Failing row contains (20, The Shawshank Redemption, null, null, null, null, null, null, t, 2026-04-15 07:41:28.7752).
+
+[SQL: INSERT INTO peliculas (titulo, titulo_original, anio, genero, director, pais, idioma, activa, fecha_creacion) VALUES (%(titulo)s, %(titulo_original)s, %(anio)s, %(genero)s, %(director)s, %(pais)s, %(idioma)s, %(activa)s, %(fecha_creacion)s) RETURNING peliculas.id]
+[parameters: {'titulo': 'The Shawshank Redemption', 'titulo_original': None, 'anio': None, 'genero': None, 'director': None, 'pais': None, 'idioma': None, 'activa': True, 'fecha_creacion': datetime.datetime(2026, 4, 15, 7, 41, 28, 775200)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-04-15 02:41:28,801 - INFO - 📈 Métricas guardadas correctamente
+2026-04-15 02:46:00,532 - INFO - Iniciando ETL para 10 películas...
+2026-04-15 02:45:50,991 - INFO - ✅ Datos extraídos para Inception
+2026-04-15 02:45:51,037 - INFO - 📊 Registro guardado para Inception
+2026-04-15 02:45:51,377 - INFO - ✅ Datos extraídos para Interstellar
+2026-04-15 02:45:51,395 - INFO - 📊 Registro guardado para Interstellar
+2026-04-15 02:45:51,705 - INFO - ✅ Datos extraídos para The Matrix
+2026-04-15 02:45:51,716 - INFO - 📊 Registro guardado para The Matrix
+2026-04-15 02:45:52,026 - INFO - ✅ Datos extraídos para Gladiator
+2026-04-15 02:45:52,036 - INFO - 📊 Registro guardado para Gladiator
+2026-04-15 02:45:52,359 - INFO - ✅ Datos extraídos para Titanic
+2026-04-15 02:45:52,370 - INFO - 📊 Registro guardado para Titanic
+2026-04-15 02:45:52,753 - INFO - ✅ Datos extraídos para The Godfather
+2026-04-15 02:45:52,765 - INFO - 📊 Registro guardado para The Godfather
+2026-04-15 02:45:53,092 - INFO - ✅ Datos extraídos para The Dark Knight
+2026-04-15 02:45:53,104 - INFO - 📊 Registro guardado para The Dark Knight
+2026-04-15 02:45:53,461 - INFO - ✅ Datos extraídos para Pulp Fiction
+2026-04-15 02:45:53,472 - INFO - 📊 Registro guardado para Pulp Fiction
+2026-04-15 02:45:53,791 - INFO - ✅ Datos extraídos para Forrest Gump
+2026-04-15 02:45:53,799 - INFO - 📊 Registro guardado para Forrest Gump
+2026-04-15 02:45:54,120 - INFO - ✅ Datos extraídos para The Shawshank Redemption
+2026-04-15 02:45:54,129 - INFO - 📊 Registro guardado para The Shawshank Redemption
+2026-04-15 02:45:54,136 - INFO - 📈 Métricas guardadas correctamente
+2026-04-15 03:35:03,830 - INFO - Iniciando ETL para 10 películas...
+2026-04-15 03:35:04,368 - INFO - ✅ Datos extraídos para Inception
+2026-04-15 03:35:04,882 - INFO - 📊 Registro guardado para Inception
+2026-04-15 03:35:05,361 - INFO - ✅ Datos extraídos para Interstellar
+2026-04-15 03:35:05,818 - INFO - 📊 Registro guardado para Interstellar
+2026-04-15 03:35:15,509 - INFO - ✅ Datos extraídos para The Matrix
+2026-04-15 03:35:06,178 - INFO - 📊 Registro guardado para The Matrix
+2026-04-15 03:35:06,533 - INFO - ✅ Datos extraídos para Gladiator
+2026-04-15 03:35:07,039 - INFO - 📊 Registro guardado para Gladiator
+2026-04-15 03:35:07,377 - INFO - ✅ Datos extraídos para Titanic
+2026-04-15 03:35:07,896 - INFO - 📊 Registro guardado para Titanic
+2026-04-15 03:35:08,237 - INFO - ✅ Datos extraídos para The Godfather
+2026-04-15 03:35:08,698 - INFO - 📊 Registro guardado para The Godfather
+2026-04-15 03:35:09,055 - INFO - ✅ Datos extraídos para The Dark Knight
+2026-04-15 03:35:09,528 - INFO - 📊 Registro guardado para The Dark Knight
+2026-04-15 03:35:09,918 - INFO - ✅ Datos extraídos para Pulp Fiction
+2026-04-15 03:35:10,392 - INFO - 📊 Registro guardado para Pulp Fiction
+2026-04-15 03:35:10,784 - INFO - ✅ Datos extraídos para Forrest Gump
+2026-04-15 03:35:10,787 - INFO - 📊 Registro guardado para Forrest Gump
+2026-04-15 03:35:11,147 - INFO - ✅ Datos extraídos para The Shawshank Redemption
+2026-04-15 03:35:11,601 - INFO - 📊 Registro guardado para The Shawshank Redemption
+2026-04-15 03:35:11,894 - INFO - 📈 Métricas guardadas correctamente
+2026-04-15 03:54:37,868 - ERROR - ❌ No se encontró data/movies_transformado.csv. Ejecuta primero el transformador.
+2026-04-15 03:55:49,916 - INFO - 📂 Datos cargados: 1000 registros desde data/movies.csv
+2026-04-15 03:55:49,925 - INFO - 🧹 Limpieza: 0 duplicados eliminados, 1000 registros restantes
+2026-04-15 03:55:49,932 - INFO - 🔧 Tipos de datos normalizados
+2026-04-15 03:55:49,939 - INFO - ✨ Datos enriquecidos con columnas calculadas
+2026-04-15 03:55:49,964 - INFO - 💾 Datos transformados guardados en data/movies_transformado.csv
+2026-04-15 03:55:50,849 - INFO - 💾 Datos exportados a Excel en data/movies_transformado.xlsx
+2026-04-15 03:55:58,699 - INFO - 📂 Cargando datos desde data/movies_transformado.csv
+2026-04-15 03:55:58,711 - INFO - 📊 1000 registros a procesar
+2026-04-15 03:55:59,718 - INFO - 🎬 10 películas registradas
+2026-04-15 03:56:00,906 - INFO - ✅ Bulk insert completado: 1000 registros
+2026-04-15 03:56:01,171 - INFO - 📈 Métricas guardadas — estado: SUCCESS
+2026-04-15 03:56:01,171 - INFO - ✅ ETL completado — Guardados: 1000 | Fallidos: 0
