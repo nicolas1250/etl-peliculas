@@ -86,8 +86,8 @@ for registro, titulo in registros_filtrados:
         'Género': registro.pelicula.genero,
         'Director': registro.pelicula.director,
         'IMDB Rating': registro.imdb_rating,
-        'Duración': registro.pelicula.duracion,
-        'Recaudación': registro.pelicula.recaudacion,
+        'Duración': registro.duracion_minutos,
+        'Recaudación': registro.recaudacion,
         'Fecha Extracción': registro.fecha_extraccion
     })
 
