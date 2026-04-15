@@ -82,9 +82,9 @@ data = []
 for registro, titulo in registros_filtrados:
     data.append({
         'Título': titulo,
-        'Año': registro.anio,
-        'Género': registro.genero,
-        'Director': registro.director,
+        'Año': registro.pelicula.anio,
+        'Género': registro.pelicula.genero,
+        'Director': registro.pelicula.director,
         'IMDB Rating': registro.imdb_rating,
         'Duración': registro.duracion,
         'Recaudación': registro.recaudacion,
