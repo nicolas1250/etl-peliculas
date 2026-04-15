@@ -9,52 +9,57 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-
 # ===============================
-# 🔐 CONFIGURACIÓN INTELIGENTE DB
+# 🔐 CONFIGURACIÓN SEGURA DB
 # ===============================
 
 def _get_db_config():
     """
-    1️⃣ Intenta leer desde st.secrets (Streamlit Cloud)
-    2️⃣ Si falla, usa variables de entorno (.env local)
+    Prioridad:
+    1. Streamlit secrets (Cloud)
+    2. Variables de entorno (.env local)
     """
 
-    # Intento 1: Streamlit secrets
+    # =========================
+    # 🌐 STREAMLIT CLOUD
+    # =========================
     try:
         import streamlit as st
 
-        host = st.secrets.get("DB_HOST", "")
+        if hasattr(st, "secrets"):
 
-        # Si estamos en cloud normalmente NO será localhost
-        if host and host != "localhost":
-            logger.info("🔐 Usando credenciales desde st.secrets")
+            host = st.secrets.get("DB_HOST")
 
-            return {
-                "host":     host,
-                "port":     st.secrets.get("DB_PORT", "5432"),
-                "user":     st.secrets.get("DB_USER", "postgres"),
-                "password": st.secrets.get("DB_PASSWORD", ""),
-                "dbname":   st.secrets.get("DB_NAME", "postgres"),
-            }
+            if host:  # solo si existe realmente
+                logger.info("🔐 Usando st.secrets (producción)")
+
+                return {
+                    "host": st.secrets.get("DB_HOST"),
+                    "port": st.secrets.get("DB_PORT", "5432"),
+                    "user": st.secrets.get("DB_USER"),
+                    "password": st.secrets.get("DB_PASSWORD"),
+                    "dbname": st.secrets.get("DB_NAME"),
+                }
 
     except Exception:
-        pass  # st no disponible en ejecución local CLI
+        pass  # Streamlit no está disponible (modo CLI)
 
-    # Intento 2: Variables de entorno (.env)
-    logger.info("💻 Usando credenciales desde .env")
+    # =========================
+    # 💻 LOCAL (.env)
+    # =========================
+    logger.info("💻 Usando variables de entorno (.env)")
 
     return {
-        "host":     os.getenv("DB_HOST", "localhost"),
-        "port":     os.getenv("DB_PORT", "5432"),
-        "user":     os.getenv("DB_USER", "postgres"),
-        "password": os.getenv("DB_PASSWORD", ""),
-        "dbname":   os.getenv("DB_NAME", "weatherstack_etl"),
+        "host": os.getenv("DB_HOST"),
+        "port": os.getenv("DB_PORT", "5432"),
+        "user": os.getenv("DB_USER"),
+        "password": os.getenv("DB_PASSWORD"),
+        "dbname": os.getenv("DB_NAME", "etl_peliculas"),
     }
 
 
 # ===============================
-# 🔧 CREACIÓN DEL ENGINE
+# 🔧 ENGINE SQLALCHEMY
 # ===============================
 
 config = _get_db_config()
@@ -66,10 +71,10 @@ DATABASE_URL = (
 
 engine = create_engine(DATABASE_URL, echo=False)
 
-# Base para modelos ORM
+# Base ORM
 Base = declarative_base()
 
-# Session factory
+# Session
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Metadata
@@ -81,7 +86,7 @@ metadata = MetaData()
 # ===============================
 
 def get_db():
-    """Obtiene una sesión de base de datos"""
+    """Obtiene sesión de base de datos"""
     db = SessionLocal()
     try:
         yield db
@@ -90,21 +95,21 @@ def get_db():
 
 
 def test_connection():
-    """Prueba la conexión a la base de datos"""
+    """Prueba conexión a PostgreSQL"""
     try:
         with engine.connect() as connection:
             connection.execute(text("SELECT 1"))
-            logger.info("✅ Conexión a PostgreSQL exitosa")
+            logger.info("✅ Conexión exitosa a PostgreSQL")
             return True
     except Exception as e:
-        logger.error(f"❌ Error conectando a PostgreSQL: {str(e)}")
+        logger.error(f"❌ Error de conexión: {e}")
         return False
 
 
 def create_all_tables():
-    """Crea todas las tablas definidas en los modelos"""
+    """Crea tablas desde modelos ORM"""
     try:
         Base.metadata.create_all(bind=engine)
-        logger.info("✅ Tablas creadas exitosamente")
+        logger.info("✅ Tablas creadas correctamente")
     except Exception as e:
-        logger.error(f"❌ Error creando tablas: {str(e)}")
+        logger.error(f"❌ Error creando tablas: {e}")
